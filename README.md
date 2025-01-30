@@ -34,8 +34,10 @@ Este projeto implementa um sistema de gerenciamento de produtos, com funcionalid
 
 
 ---
+# Usando o sistema:
+Você pode abrir a pasta release e abrir os arquivos crow.exe (para o frontend) e backend_projeto.exe (para o backend)
 
-# Como executar o sistema:
+# Compilando o sistema:
 
 Este é um servidor web simples implementado em C++ utilizando o framework **Crow** para a criação da API, com persistência de dados utilizando **SQLite3**. O sistema permite realizar operações de autenticação, cadastro e gestão de produtos.
 
