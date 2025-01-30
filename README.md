@@ -41,10 +41,6 @@ Você pode abrir a pasta release e abrir os arquivos crow.exe (para o frontend) 
 
 # Compilando o sistema:
 
-Este é um servidor web simples implementado em C++ utilizando o framework **Crow** para a criação da API, com persistência de dados utilizando **SQLite3**. O sistema permite realizar operações de autenticação, cadastro e gestão de produtos.
-
-## Requisitos
-
 Antes de executar o sistema, certifique-se de que você tem as seguintes dependências instaladas:
 
 - **C++11 ou superior**: Certifique-se de que o seu compilador suporta a versão C++11 ou superior.
@@ -79,7 +75,7 @@ sudo apt-get install libsqlite3-dev
 
 4. **Clone o repositório**:
 ```bash
-git clone https://github.com/silly/servidorcrow.git
+git clone https://github.com/sillyveira/cinconecta-cpp.git
 cd servidorcrow
 ```
 
