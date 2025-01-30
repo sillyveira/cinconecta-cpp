@@ -2,6 +2,8 @@
 
 Este projeto implementa um sistema de gerenciamento de produtos, com funcionalidades como pesquisa, adição, atualização, remoção de produtos e autenticação de usuários. O sistema utiliza um banco de dados SQLite para persistir dados e foi desenvolvido utilizando conceitos de Programação Orientada a Objetos (OOP).
 
+## Um vídeo do projeto sendo utilizado:
+[![link](https://img.youtube.com/vi/2eIc5AYp1jI/0.jpg)](https://www.youtube.com/watch?v=2eIc5AYp1jI)
 
 ### Funcionalidades:
 1. **Cadastro de usuários**: Permite que novos usuários se registrem no sistema, utilizando um nome de usuário e uma senha criptografada.
