@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CinConecta</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #cbffcd;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    section {
+      background: white;
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 800px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2, h3, h4 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    p, ul {
+      margin-bottom: 15px;
+    }
+
+    .h2-desc {
+        text-align: center;
+    }
+
+    .video-text {
+        text-align: center;
+    }
+
+    a {
+        text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CinConecta</h1>
+  </header>
+  <section>
+    <h2 class="h2-desc">Projeto de gestão de estoque de produtos com autenticação</h2>
+    <p>Este projeto implementa um sistema de gerenciamento de produtos, com funcionalidades como pesquisa, adição, atualização, remoção de produtos e autenticação de usuários. O sistema utiliza um banco de dados SQLite para persistir dados e foi desenvolvido utilizando conceitos de Programação Orientada a Objetos (OOP).</p>
+    <a class="link-" href="https://github.com/sillyveira/cinconecta-cpp">Página no Github</a>
+    <h3 class="video-text">Vídeo de apresentação do projeto</h3>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Ui7f_YPvVvU" 
+  title="YouTube video player" frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen></iframe>
+  <h3 class="video-text">Vídeo resumido do projeto</h3>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/fJ3IViHZEqg" 
+  title="YouTube video player" frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen></iframe>
+
+    <h4>Arquivo: controlador.cpp</h4>
+    <p>Nosso controlador segue uma arquitetura RESTful e é responsável por gerenciar requisições HTTP na aplicação. Ele é desenvolvido em C++ com a biblioteca Crow, garantindo a comunicação entre o cliente e o banco de dados SQLite.</p>
+    <p>O controlador executa funções como:</p>
+    <ul>
+      <li>Recuperação de produtos (por usuário ou consulta específica).</li>
+      <li>Adição, remoção e atualização de produtos.</li>
+      <li>Registro, autenticação e logout de usuários.</li>
+    </ul>
+    <p>Separamos a lógica de requisição, manipulação de dados e resposta JSON. Além disso, utilizamos <code>hashSimples</code> para validação segura de senhas.</p>
+
+    <h4>Arquivo: controlador.h</h4>
+    <p>Define as funções essenciais para o controle de produtos e usuários em nosso sistema. Ele funciona como uma ponte entre as requisições HTTP, feitas com a biblioteca Crow, e o banco de dados SQLite, garantindo que possamos gerenciar os dados de forma eficiente.</p>
+
+    <h4>Arquivo: dbmanager.cpp</h4>
+    <p>O gerenciamento de produtos e usuários é realizado com funções que permitem:</p>
+    <ul>
+      <li>Busca, adição, atualização e remoção de produtos.</li>
+      <li>Registro de usuários e verificação de credenciais.</li>
+      <li>Geração, verificação e revogação de tokens.</li>
+    </ul>
+
+    <h4>Arquivo: hashing.h</h4>
+    <p>Este arquivo lida com a geração e verificação de hashes:</p>
+    <ul>
+      <li>Geração de hash utilizando um algoritmo simples com fator primo.</li>
+      <li>Verificação de hash para autenticação segura de senhas.</li>
+    </ul>
+
+    <h4>Arquivo: horarios.h</h4>
+    <p>Funções principais para manipulação de datas e horários:</p>
+    <ul>
+      <li>Obtenção da hora atual no formato "YYYY-MM-DD HH:MM:SS".</li>
+      <li>Conversão de string para estrutura de tempo <code>std::tm</code>.</li>
+      <li>Comparação de datas para verificação de validade de tokens.</li>
+    </ul>
+
+    <h4>Arquivo: produto.h</h4>
+    <p>A estrutura <code>Produto</code> encapsula atributos relacionados a um produto, garantindo um bloco lógico coeso. Um construtor facilita a inicialização dos atributos.</p>
+
+    <h4>Arquivo: router.h</h4>
+    <p>Contém a definição das rotas utilizadas pelo servidor para manipulação de produtos e usuários:</p>
+    <ul>
+      <li>Rotas GET, POST, DELETE e PUT para manipulação de produtos.</li>
+      <li>Rotas para registro, login e logout de usuários.</li>
+    </ul>
+
+    <h4>Arquivo: main.cpp</h4>
+    <p>Principais funcionalidades:</p>
+    <ul>
+      <li>Inicialização do servidor com a biblioteca Crow.</li>
+      <li>Conexão com o banco de dados SQLite.</li>
+      <li>Registro de rotas e encerramento seguro do servidor.</li>
+    </ul>
+
+    <h4>PASTA: token.h</h4>
+    <p>Funções principais:</p>
+    <ul>
+      <li>Geração de números aleatórios para criação de tokens seguros.</li>
+      <li>Uso de <code>std::stringstream</code> para formatação do token.</li>
+      <li>Tokens com 32 caracteres hexadecimais, garantindo unicidade.</li>
+    </ul>
+
+    <h3>CRÉDITOS:</h3>
+    <p><strong>Thiago Fernandes:</strong> controlador.cpp, controlador.h, produto.h, token.h, rotas.h</p>
+    <p><strong>Wesley Silveira:</strong> dbManager.cpp, dbManager.h, hashing.h, horarios.h, main.cpp, rotas.cpp e front end</p>
+  </section>
+</body>
+</html>
